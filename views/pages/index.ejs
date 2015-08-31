@@ -1,10 +1,19 @@
 <!DOCTYPE html>
 <script>
 
-var printoutput = function (voteText, address, signature) {
-	var value = verify(voteText, address, signature);
-  document.getElementById("demo").innerHTML = value;
-  console.log(value);
+var printoutput = function () {
+	var voteText = document.getElementById("voteText").value;
+	var address = document.getElementById("address").value;
+	var signature = document.getElementById("signature").value;
+
+
+	$.post("http://localhost:5000/verify",{voteText:voteText, address:address, signature:signature}, function(data){
+		document.getElementById("demo").innerHTML = data;
+		console.log(data);
+	});
+
+	//var value = verify(voteText, address, signature);
+
 }
 </script>
 
@@ -12,9 +21,16 @@ var printoutput = function (voteText, address, signature) {
 
 <body>
 
+voteText: <input type="voteText" id="voteText"><br>
+address: <input type="address" id="address"><br>
+signature: <input type="signature" id="signature"><br>
+
 <p>Click to verify</p>
 
-<button onclick="printoutput(voteText, address, signature)">Verify</button>
+<p><%= result %></p>
+<p><%= verifycheck %></p>
+
+<button onclick="printoutput()">Verify</button>
 
 <p id="demo"></p>
 
