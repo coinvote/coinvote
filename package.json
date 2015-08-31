@@ -3,6 +3,9 @@
   "version": "0.0.1",
   "description": "coinvote dot org server",
   "main": "coinvote.js",
+  "scripts": {
+    "start": "node coinvte.js"
+  },
   "dependencies": {
     "bitcore-message": "^0.12.0",
     "bitcore": "^0.13.1"
