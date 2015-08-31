@@ -9,7 +9,8 @@
   "dependencies": {
     "bitcore-message": "^0.12.0",
     "bitcore": "^0.13.1",
-    "express": "~4.9.x"
+    "express": "~4.9.x",
+    "ejs": "^2.3.1"
   },
   "engines": {
     "node": "0.12.2"
