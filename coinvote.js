@@ -28,7 +28,7 @@ var verify = function (voteText, address, signature) {
 //verify(voteText,address, signature);
 
 // express front end stuff
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 5000));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -37,7 +37,12 @@ app.get('/', function(request, response) {
 	response.render('pages/index');
 });
 
-/*app.post('/verify',function(req,res){
+
+app.listen(app.get('port'), function() {
+	console.log("Node app is running at localhost:" + app.get('port'))
+})
+
+app.post('/verify',function(req,res){
 	var voteText=req.body.voteText;
 	var address=req.body.address;
 	var signature=req.body.signature;
@@ -46,4 +51,4 @@ app.get('/', function(request, response) {
 	console.log(result);
 	res.send(result);
 });
-*/
+
