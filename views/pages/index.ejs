@@ -1,34 +1,14 @@
 <!DOCTYPE html>
-<html>
 <script>
-//requirements
-var bitcore = require('bitcore');
-var bitcoreMessage = require('bitcore-message');
 
-//verification function using bitcore, bitcore-message, and node
-var address = 'n1ZCYg9YXtB5XCZazLxSmPDa8iwJRZHhGx';
-var signature = 'H/DIn8uA1scAuKLlCx+/9LnAcJtwQQ0PmcPrJUq90aboLv3fH5fFvY+vmbfOSFEtGarznYli6ShPr9RXwY9UrIY=';
-var voteText = "hello, world";
-
-var verify = function (voteText, address, signature) {
-	var verifycheck = bitcoreMessage(voteText).verify(address, signature);
-	if(verifycheck===true) {
-		console.log("verified");
-	}
-	else {
-		console.log("not verified");
-	}
-	return (verifycheck);
-}
-</script>
-
-<script>
 var printoutput = function (voteText, address, signature) {
 	var value = verify(voteText, address, signature);
   document.getElementById("demo").innerHTML = value;
   console.log(value);
 }
 </script>
+
+<html>
 
 <body>
 

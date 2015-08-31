@@ -2,12 +2,15 @@
 var bitcore = require('bitcore');
 var bitcoreMessage = require('bitcore-message');
 var express = require('express');
+var bodyParser = require("body-parser");
 var app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
 
 //verification function using bitcore, bitcore-message, and node
+var voteText = "hello, world";
 var address = 'n1ZCYg9YXtB5XCZazLxSmPDa8iwJRZHhGx';
 var signature = 'H/DIn8uA1scAuKLlCx+/9LnAcJtwQQ0PmcPrJUq90aboLv3fH5fFvY+vmbfOSFEtGarznYli6ShPr9RXwY9UrIY=';
-var voteText = "hello, world";
+
 
 
 var verify = function (voteText, address, signature) {
@@ -21,7 +24,7 @@ var verify = function (voteText, address, signature) {
 	return (verifycheck);
 }
 
-//verify(voteText,address, signature);
+verify(voteText,address, signature);
 
 // express front end stuff
 app.set('port', (process.env.PORT || 5000));
@@ -34,3 +37,12 @@ app.get('/', function(request, response) {
 	response.render('pages/index');
 });
 
+app.post('/login',function(req,res){
+	var address=req.body.address;
+	var signature=req.body.signature;
+	var messagetext=reb.body.messagetext;
+	var result = verify(address, signature, messagetext);
+
+	console.log(result);
+	res.send(result);
+});
