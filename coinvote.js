@@ -25,11 +25,10 @@ var verify = function (voteText, address, signature) {
 	return (verifycheck);
 }
 
-verify(voteText,address, signature);
+//verify(voteText,address, signature);
 
 // express front end stuff
-app.set('port', (process.env.PORT || 5000));
-
+app.set('port', (process.env.PORT || 3000));
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
@@ -38,11 +37,11 @@ app.get('/', function(request, response) {
 	response.render('pages/index');
 });
 
-app.post('/verify',function(req,res){
+/*app.post('/verify',function(req,res){
 	var voteText=req.body.voteText;
 	var address=req.body.address;
 	var signature=req.body.signature;
-	var result = verify(address, signature, messagetext);
+	var result = verify(voteText, address, signature);
 
 	console.log(result);
 	res.send(result);

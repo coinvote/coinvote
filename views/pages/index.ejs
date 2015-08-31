@@ -5,17 +5,48 @@ var printoutput = function () {
 	var voteText = document.getElementById("voteText").value;
 	var address = document.getElementById("address").value;
 	var signature = document.getElementById("signature").value;
+	post('/verify', {voteText:voteText, address:address, signature:signature});
 
 
-	$.post("http://localhost:5000/verify",{voteText:voteText, address:address, signature:signature}, function(data){
-		document.getElementById("demo").innerHTML = data;
-		console.log(data);
-	});
+	//$.post("http://localhost:5000/verify",{voteText:voteText, address:address, signature:signature}, function(data){
+	//document.getElementById("demo").innerHTML = data;
+	//console.log(data);
+	//});
 
 	//var value = verify(voteText, address, signature);
 
 }
 </script>
+
+
+<script>
+function post(path, params, method) {
+  method = method || "post"; // Set method to post by default if not specified.
+
+// The rest of this code assumes you are not using a library.
+// It can be made less wordy if you use one.
+  var form = document.createElement("form");
+  form.setAttribute("method", method);
+  form.setAttribute("action", path);
+
+  for(var key in params) {
+  if(params.hasOwnProperty(key)) {
+  var hiddenField = document.createElement("input");
+  hiddenField.setAttribute("type", "hidden");
+  hiddenField.setAttribute("name", key);
+  hiddenField.setAttribute("value", params[key]);
+
+  form.appendChild(hiddenField);
+  }
+  }
+
+  document.body.appendChild(form);
+  form.submit();
+}
+</script>
+
+
+
 
 <html>
 
@@ -26,9 +57,6 @@ address: <input type="address" id="address"><br>
 signature: <input type="signature" id="signature"><br>
 
 <p>Click to verify</p>
-
-<p><%= result %></p>
-<p><%= verifycheck %></p>
 
 <button onclick="printoutput()">Verify</button>
 
