@@ -2,6 +2,7 @@
 var bitcore = require('bitcore');
 var bitcoreMessage = require('bitcore-message');
 var express = require('express');
+var app = express();
 
 //verification function using bitcore, bitcore-message, and node
 var address = 'n1ZCYg9YXtB5XCZazLxSmPDa8iwJRZHhGx';
@@ -21,9 +22,16 @@ var verify = function (voteText, address, signature) {
 verify(voteText,address, signature);
 
 // express front end stuff
-express.set('views', __dirname + '/views');
-express.set('view engine', 'ejs');
+app.set('port', (process.env.port || 5000));
 
-express.get('/', function(request, response) {
+
+app.set('views', __dirname + '/views');
+app.set('view engine', 'ejs');
+
+app.get('/', function(request, response) {
 	response.render('pages/index');
+});
+
+app.listen(app.get('port'), function() {
+	console.log('Node app is running on port', app.get('port'));
 });
