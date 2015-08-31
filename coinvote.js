@@ -5,17 +5,19 @@ var bitcoreMessage = require('bitcore-message');
 
 //verification function
 
-var address = 'n1ZCYg9YXtB5XCZazLxSmPDa8iwJRZHhGx';
-var signature = 'H/DIn8uA1scAuKLlCx+/9LnAcJtwQQ0PmcPrJUq90aboLv3fH5fFvY+vmbfOSFEtGarznYli6ShPr9RXwY9UrIY=';
-var voteText = "hello, world";
+var address = prompt("what is your address?");
+var signature = prompt("what is your signature?");
+var voteText = prompt("what is your vote?");
 
 var verify = function (voteText, address, signature) {
 	var verifycheck = bitcoreMessage(voteText).verify(address, signature);
 	if(verifycheck===true) {
 		console.log("verified");
+		confirm("verified")
 	}
 	else {
 		console.log("not verified");
+		confirm("invalid sig")
 	}
 }
 
