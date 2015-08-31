@@ -11,6 +11,6 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "kelly",
-  "license": "MIT"
-}
+  "engines": {
+    "node": "0.12.2"
+  },}
