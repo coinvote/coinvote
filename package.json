@@ -7,10 +7,6 @@
     "bitcore-message": "^0.12.0",
     "bitcore": "^0.13.1"
   },
-  "devDependencies": {},
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "engines": {
     "node": "0.12.2"
   },
