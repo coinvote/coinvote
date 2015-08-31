@@ -46,3 +46,4 @@ app.get('/', function(request, response) {
 	console.log(result);
 	res.send(result);
 });
+*/
