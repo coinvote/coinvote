@@ -1,24 +1,18 @@
 <!DOCTYPE html>
-<html>
-<body>
-
-<p>Click the button to demonstrate the prompt box.</p>
-
-<button onclick="myFunction()">Try it</button>
-
-<p id="demo"></p>
-
-</body>
-</html>
-whoops sorry
-<!DOCTYPE html>
 <script src="coinvote.js"></script>
+<script>
+var printoutput = function () {
+  document.getElementById("demo").innerHTML = verify(voteText,address, signature);
+}
+</script>
+
+
 <html>
 <body>
 
 <p>Click the button to demonstrate the prompt box.</p>
 
-<button onclick="myFunction()">Try it</button>
+<button onclick="printoutput()">Try it</button>
 
 <p id="demo"></p>
 

@@ -9,6 +9,7 @@ var address = 'n1ZCYg9YXtB5XCZazLxSmPDa8iwJRZHhGx';
 var signature = 'H/DIn8uA1scAuKLlCx+/9LnAcJtwQQ0PmcPrJUq90aboLv3fH5fFvY+vmbfOSFEtGarznYli6ShPr9RXwY9UrIY=';
 var voteText = "hello, world";
 
+
 var verify = function (voteText, address, signature) {
 	var verifycheck = bitcoreMessage(voteText).verify(address, signature);
 	if(verifycheck===true) {
@@ -17,9 +18,10 @@ var verify = function (voteText, address, signature) {
 	else {
 		console.log("not verified");
 	}
+	return (verifycheck);
 }
 
-verify(voteText,address, signature);
+//verify(voteText,address, signature);
 
 // express front end stuff
 app.set('port', (process.env.PORT || 5000));
