@@ -1,64 +1,33 @@
 <!DOCTYPE html>
-<script>
-
-var printoutput = function () {
-	var voteText = document.getElementById("voteText").value;
-	var address = document.getElementById("address").value;
-	var signature = document.getElementById("signature").value;
-	post('/verify', {voteText:voteText, address:address, signature:signature});
-
-
-	//$.post("http://localhost:5000/verify",{voteText:voteText, address:address, signature:signature}, function(data){
-	//document.getElementById("demo").innerHTML = data;
-	//console.log(data);
-	//});
-
-	//var value = verify(voteText, address, signature);
-
-}
-</script>
-
-
-<script>
-function post(path, params, method) {
-  method = method || "post"; // Set method to post by default if not specified.
-
-// The rest of this code assumes you are not using a library.
-// It can be made less wordy if you use one.
-  var form = document.createElement("form");
-  form.setAttribute("method", method);
-  form.setAttribute("action", path);
-
-  for(var key in params) {
-  if(params.hasOwnProperty(key)) {
-  var hiddenField = document.createElement("input");
-  hiddenField.setAttribute("type", "hidden");
-  hiddenField.setAttribute("name", key);
-  hiddenField.setAttribute("value", params[key]);
-
-  form.appendChild(hiddenField);
-  }
-  }
-
-  document.body.appendChild(form);
-  form.submit();
-}
-</script>
-
-
-
-
 <html>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js">  </script>
+    <script>
+      $(document).ready(function(){
+        var voteText,address,signature;
+        $("#submit").click(function(){
+          voteText=$("#voteText").val();
+          address=$("#address").val();
+          signature=$("#signature").val();
+          $.post("http://localhost:5000/verify",{voteText: voteText, address: address, signature: signature, function(data){
+            if(data==='done')
+              {
+                alert("login success");
+              }
+              });
+        });
+      });
+    </script>
+
 
 <body>
 
 voteText: <input type="voteText" id="voteText"><br>
 address: <input type="address" id="address"><br>
 signature: <input type="signature" id="signature"><br>
+<input type="button" id="submit" value="verify"></br>
 
 <p>Click to verify</p>
 
-<button onclick="printoutput()">Verify</button>
 
 <p id="demo"></p>
 
