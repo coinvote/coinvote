@@ -12,11 +12,9 @@ var verify = function (voteText, address, signature) {
 	var verifycheck = bitcoreMessage(voteText).verify(address, signature);
 	if(verifycheck===true) {
 		console.log("verified");
-		confirm("verified")
 	}
 	else {
 		console.log("not verified");
-		confirm("invalid sig")
 	}
 }
 
