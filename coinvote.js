@@ -22,7 +22,7 @@ var verify = function (voteText, address, signature) {
 verify(voteText,address, signature);
 
 // express front end stuff
-app.set('port', (process.env.port || 5000));
+app.set('port', (process.env.PORT || 5000));
 
 
 app.set('views', __dirname + '/views');
