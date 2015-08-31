@@ -4,7 +4,7 @@
   "description": "coinvote dot org server",
   "main": "coinvote.js",
   "scripts": {
-    "start": "node coinvte.js"
+    "start": "node coinvote.js"
   },
   "dependencies": {
     "bitcore-message": "^0.12.0",
