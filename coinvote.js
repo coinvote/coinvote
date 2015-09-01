@@ -3,8 +3,8 @@ var bitcore = require('bitcore');
 var bitcoreMessage = require('bitcore-message');
 var express = require('express');
 var app = express();
-//var bodyParser = require('body-parser');
-//app.use(bodyParser()); 
+var bodyParser = require('body-parser');
+app.use(bodyParser()); 
 
 
 //verification function using bitcore, bitcore-message, and node
