@@ -44,12 +44,12 @@ app.post('/verify',function(req,res){
 	res.send(result);
 });
 
-/*
+
 app.get('/verify', function (req, res) {
   res.json({result: verify(voteText, address, signature)});
 });
 
-
+/*
 app.post('/verify',function(req,res){
 	var voteText=req.body.voteText;
 	var address=req.body.address;
