@@ -38,9 +38,9 @@ app.get('/', function(request, response) {
 });
 
 app.post('/verify',function(req,res){
-	var voteText=req.body.voteTextClient;
-	var address=req.body.addressClient;
-	var signature=req.body.signatureClient;
+	var voteText=req.body.voteText;
+	var address=req.body.address;
+	var signature=req.body.signature;
 	console.log(voteText)
 
 
