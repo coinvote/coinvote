@@ -4,7 +4,7 @@ var bitcoreMessage = require('bitcore-message');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
-app.use(bodyParser.urlencode()); 
+app.use(bodyParser.urlencoded()); 
 
 
 //verification function using bitcore, bitcore-message, and node
