@@ -5,9 +5,9 @@
       $(document).ready(function(){
         var voteText,address,signature;
         $("#submit").click(function(){
-          voteText=$("#voteText").val();
-          address=$("#address").val();
-          signature=$("#signature").val();
+          var voteText = $("#voteText").val();
+          var address = $("#address").val();
+          var signature = $("#signature").val();
           $.post("/verify", {voteText: voteText, address: address, signature: signature}, function(data){
                 alert("data loaded");
               });
