@@ -41,6 +41,7 @@ app.post('/verify',function(req,res){
 	var voteText=req.body.voteTextClient;
 	var address=req.body.addressClient;
 	var signature=req.body.signatureClient;
+	console.log(voteText)
 
 
 	var result = verify(voteText, address, signature);
