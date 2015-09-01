@@ -9,9 +9,9 @@ var app = express();
 
 //verification function using bitcore, bitcore-message, and node
 
-var voteText = "hello, world";
+/*var voteText = "hello, world";
 var address = 'n1ZCYg9YXtB5XCZazLxSmPDa8iwJRZHhGx';
-var signature = 'H/DIn8uA1scAuKLlCx+/9LnAcJtwQQ0PmcPrJUq90aboLv3fH5fFvY+vmbfOSFEtGarznYli6ShPr9RXwY9UrIY=';
+var signature = 'H/DIn8uA1scAuKLlCx+/9LnAcJtwQQ0PmcPrJUq90aboLv3fH5fFvY+vmbfOSFEtGarznYli6ShPr9RXwY9UrIY=';*/
 
 
 var verify = function (voteText, address, signature) {
