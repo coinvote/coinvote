@@ -37,17 +37,17 @@ app.get('/', function(request, response) {
 	response.render('pages/index');
 });
 
-app.post('/verify',function(req,res){
+/*app.post('/verify',function(req,res){
 	var result = verify(voteText, address, signature);
 
 	console.log(result);
 	res.send(result);
-});
+});*/
 
 /*
 app.get('/verify', function (req, res) {
   res.json({result: verify(voteText, address, signature)});
-});
+});*/
 
 
 app.post('/verify',function(req,res){
@@ -58,7 +58,7 @@ app.post('/verify',function(req,res){
 
 	console.log(result);
 	res.send(result);
-});*/
+});
 
 app.listen(app.get('port'), function() {
 	console.log("Node app is running at localhost:" + app.get('port'));
