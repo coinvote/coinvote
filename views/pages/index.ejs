@@ -9,10 +9,7 @@
           address=$("#address").val();
           signature=$("#signature").val();
           $.post("/verify", {voteText: voteText, address: address, signature: signature}, function(data){
-            if(data==='done')
-              {
                 alert("data loaded");
-              }
               });
         });
       });
