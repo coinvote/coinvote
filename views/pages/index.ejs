@@ -8,7 +8,7 @@
           voteText=$("#voteText").val();
           address=$("#address").val();
           signature=$("#signature").val();
-          $.post("http://localhost:5000/verify",{voteText: voteText, address: address, signature: signature, function(data){
+          $.post("http://localhost:5000/verify",{voteText: voteText, address: address, signature: signature}, function(data){
             if(data==='done')
               {
                 alert("login success");
