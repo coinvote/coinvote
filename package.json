@@ -9,7 +9,7 @@
   "dependencies": {
     "bitcore-message": "^0.12.0",
     "bitcore": "^0.13.1",
-    //"body-parser": "^1.8.1",
+    "body-parser": "^1.8.1",
     "express": "~4.9.x",
     "ejs": "^2.3.1"
   },
