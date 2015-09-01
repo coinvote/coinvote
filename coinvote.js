@@ -38,6 +38,11 @@ app.get('/', function(request, response) {
 });
 
 app.post('/verify',function(req,res){
+	var voteText=req.body.voteTextClient;
+	var address=req.body.addressClient;
+	var signature=req.body.signatureClient;
+
+
 	var result = verify(voteText, address, signature);
 
 	console.log(result);
@@ -47,17 +52,6 @@ app.post('/verify',function(req,res){
 /*
 app.get('/verify', function (req, res) {
   res.json({result: verify(voteText, address, signature)});
-});*/
-
-
-/*app.post('/verify',function(req,res){
-	var voteText=req.body.voteText;
-	var address=req.body.address;
-	var signature=req.body.signature;
-	var result = verify(voteText, address, signature);
-
-	console.log(result);
-	res.send(result);
 });*/
 
 app.listen(app.get('port'), function() {
