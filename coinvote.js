@@ -41,12 +41,7 @@ app.post('/verify',function(req,res){
 	var voteText=req.body.voteText;
 	var address=req.body.address;
 	var signature=req.body.signature;
-	console.log(voteText)
-
-
 	var result = verify(voteText, address, signature);
-
-	console.log(result);
 	res.send(result);
 });
 
