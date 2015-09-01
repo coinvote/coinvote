@@ -40,8 +40,8 @@ app.get('/', function(request, response) {
 app.post('/verify',function(req,res){
 	var result = verify(voteText, address, signature);
 
-	console.log(result);
-	res.send(result);
+	console.log(res);
+	res.send(res);
 });
 
 
