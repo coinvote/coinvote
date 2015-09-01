@@ -5,11 +5,11 @@
       $(document).ready(function(){
         var voteText,address,signature;
         $("#submit").click(function(){
-          var voteText = $("#voteText").val();
-          alert(voteText)
-          var address = $("#address").val();
-          var signature = $("#signature").val();
-          $.post("/verify", {voteText: voteText, address: address, signature: signature}, function(data){
+          var voteTextClient = $("#voteText").val();
+          alert(voteTextClient)
+          var addressClient = $("#address").val();
+          var signatureClient = $("#signature").val();
+          $.post("/verify", {voteText: voteTextClient, address: addressClient, signature: signatureClient}, function(data){
                 alert("data loaded");
               });
         });
