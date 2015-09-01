@@ -6,6 +6,7 @@
         var voteText,address,signature;
         $("#submit").click(function(){
           var voteText = $("#voteText").val();
+          alert(voteText)
           var address = $("#address").val();
           var signature = $("#signature").val();
           $.post("/verify", {voteText: voteText, address: address, signature: signature}, function(data){
